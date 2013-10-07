@@ -55,3 +55,7 @@ func Translate(key string, args ...interface{}) (string, error) {
 
   return "", errors.New("Current locale is not set")
 }
+
+func T(key string, args ...interface{}) (string, error) {
+  return Translate(key, args...)
+}
