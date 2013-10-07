@@ -42,6 +42,8 @@ func TestSetLocale(t *testing.T) {
 }
 
 func TestTranslate(t *testing.T) {
+  defer resetLocales()
+
   en := NewLocale("en")
   en.Add("greeting",  "hello")
   en.Add("greeting2", "hello2")
