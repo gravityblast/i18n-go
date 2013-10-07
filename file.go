@@ -5,7 +5,7 @@ import (
   "github.com/pilu/config"
 )
 
-func LoadFile(filePath string) error {
+func loadFile(filePath string) error {
   baseName        := filepath.Base(filePath)
   extension       := filepath.Ext(baseName)
   mainSectionName := baseName[:len(baseName) - len(extension)]
@@ -31,14 +31,14 @@ func LoadFile(filePath string) error {
   return nil
 }
 
-func LoadFiles(globPattern string) error {
+func Load(globPattern string) error {
   paths, err := filepath.Glob(globPattern)
   if err != nil {
     return nil
   }
 
   for _, filePath := range paths {
-    err := LoadFile(filePath)
+    err := loadFile(filePath)
     if err != nil {
       return err
     }

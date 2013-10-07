@@ -50,7 +50,7 @@ func TestLoadFile(t *testing.T) {
   }
 
   withTestData(files, func(folderPath string) {
-    err := LoadFile(filepath.Join(folderPath, "en.conf"))
+    err := loadFile(filepath.Join(folderPath, "en.conf"))
     assert.Nil(t, err)
     assert.Equal(t, 3, len(locales))
 
@@ -77,7 +77,7 @@ func TestLoadFile(t *testing.T) {
   })
 }
 
-func TestLoadFiles(t *testing.T) {
+func TestLoad(t *testing.T) {
   defer resetLocales()
 
   files := map[string]string{
@@ -99,7 +99,7 @@ func TestLoadFiles(t *testing.T) {
   }
 
   withTestData(files, func(folderPath string) {
-    err := LoadFiles(filepath.Join(folderPath, "*.conf"))
+    err := Load(filepath.Join(folderPath, "*.conf"))
     assert.Nil(t, err)
     assert.Equal(t, 2, len(locales))
 
