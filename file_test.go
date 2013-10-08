@@ -71,7 +71,7 @@ func TestLoadFile(t *testing.T) {
       assert.Type(t, "*i18n.Locale", locale)
       assert.Equal(t, code, locale.Code)
 
-      tr := locale.translations[key]
+      tr := locale.Translations[key]
       assert.Equal(t, value, tr.Value())
     }
   })
@@ -120,7 +120,7 @@ func TestLoad(t *testing.T) {
       assert.Type(t, "*i18n.Locale", locale)
       assert.Equal(t, code, locale.Code)
 
-      tr := locale.translations[key]
+      tr := locale.Translations[key]
       assert.Equal(t, value, tr.Value())
     }
   })

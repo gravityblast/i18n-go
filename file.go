@@ -31,6 +31,7 @@ func loadFile(filePath string) error {
   return nil
 }
 
+// Loads translations from one or more files passing globPatterns to filepath.Glob.
 func Load(globPattern string) error {
   paths, err := filepath.Glob(globPattern)
   if err != nil {
